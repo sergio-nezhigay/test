@@ -9,14 +9,22 @@ body {
 	font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
 	font-size: 14px;
 	color: #000;
-	margin: 0;
-	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.wrapper1 {
+	width: 500px;
+	height: 500px;
+	background-color: aqua;
 }
 
 .wrapper {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	margin: 0 auto;
 	/* width: 50vw;
 				height: 50vh; */
 }
@@ -67,5 +75,15 @@ body {
 
 .swiper-button-prev,
 .swiper-button-next {
+	top: calc(100% - 100px);
 	transform: translateY(100px);
+}
+
+.swiper-button-prev {
+	left: 25%;
+}
+
+.swiper-button-prev {
+	right: 50% !important;
+	left: unset !important;
 }
