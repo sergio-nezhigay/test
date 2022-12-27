@@ -1,81 +1,64 @@
 html,
 body {
-	position: relative;
-	height: 100%;
+  position: relative;
+  height: 100%;
 }
 
 body {
-	background: #eee;
-	font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-	font-size: 14px;
-	color: #000;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .container {
-	width: 424px;
-	padding: 0 16px;
-	margin: 0 auto;
-	background-color: rgb(194, 240, 181);
-	outline: 2px solid rgb(55, 44, 184);
+  width: 424px;
+  padding: 0 16px;
+  margin: 0 auto;
+  background-color: rgb(194, 240, 181);
+  outline: 2px solid rgb(55, 44, 184);
 }
 html,
 body {
-	position: relative;
-	height: 100%;
+  position: relative;
+  height: 100%;
 }
 
 body {
-	background: #eee;
-	font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-	font-size: 14px;
-	color: #000;
-	margin: 0;
-	padding: 0;
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
 }
-
-.two {
-	background-color: aqua;
-}
-
-.three {
-	background-color: burlywood;
-}
-
-.luxe {
-	background-color: darkcyan;
-}
-
-.swiper {
-	width: 100%;
-	height: 100%;
-}
-
 .swiper-slide {
-	text-align: center;
-	font-size: 18px;
-	/* background: #fff; */
-
-	/* Center slide text vertically */
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: -webkit-flex;
-	display: flex;
-	-webkit-box-pack: center;
-	-ms-flex-pack: center;
-	-webkit-justify-content: center;
-	justify-content: center;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
-	-webkit-align-items: center;
-	align-items: center;
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .swiper-slide img {
-	display: block;
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-slide {
+  width: 50%;
+}
+
+.swiper-slide:nth-child(2n) {
+  width: 20%;
+}
+
+.swiper-slide:nth-child(3n) {
+  width: 40%;
 }
