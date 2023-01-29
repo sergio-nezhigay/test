@@ -1,75 +1,42 @@
-html,
-body {
-  position: relative;
-  height: 100%;
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
 
 body {
-  background: #eee;
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  color: #000;
-  margin: 0;
-  padding: 0;
-}
-
-.swiper {
+  font-family: sans-serif;
+  font-size: 40px;
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
 }
 
-.swiper-slide.swiper-slide-prev {
-  width: 270px;
+[class^="box-"] {
+  background-color: skyblue;
+
+  /* To place the letter at the center */
+  display: grid;
+  place-items: center;
+  grid-column: span 1;
 }
 
-.swiper-slide.swiper-slide-active,
-.swiper-slide.swiper-slide-prev,
-.swiper-slide.swiper-slide-next {
-  visibility: visible;
-}
+.container {
+  display: grid;
+  gap: 25px;
+  height: 100vh;
 
-.swiper-slide {
-  visibility: hidden;
-  text-align: center;
-  font-size: 18px;
-  background: rgb(192, 188, 188);
-  height: 270px;
-  width: 162px;
-  /* Center slide text vertically */
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
-  align-items: center;
+  /* // each box has equal size */
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 300px auto;
+  grid-template-areas:
+    "header content"
+    "header sidebar";
 }
-
-.swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.box-1 {
+  grid-row: header/header;
+  grid-column: header/header;
 }
-
-.img-wrapper {
-  height: 100%;
+.box-2 {
 }
-
-.mySwiper {
-  margin-top: 100px;
-  margin-left: auto;
-  margin-right: auto;
-  width: calc(270px + 162px + 162px + 2 * 34px);
-  height: auto;
-  border: 20px solid rgba(128, 128, 128, 0.484);
-}
-
-.swiper-wrapper {
-  left: 54px;
+.box-3 {
 }
