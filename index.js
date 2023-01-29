@@ -14,33 +14,28 @@ const people = [
 ];
 
 const res=[];
-console.log("start4");
+console.log("start6");
 people.forEach(man => {
-  console.log("🚀 ~ file: index.js:19 ~ man", man)
-  console.log("🚀 ~ file: index.js:30 ~ res", res)
+
   if (! man.parentId) {
     res.push({...man, children: []});
   }  
   else {
-    if (res[man.parentId]) {
-      res[man.parentId].children.push({...man, children: []}); // ??
-      console.log("🚀 ~ file: index.js:28 ~ res[man.parentId].children", res[man.parentId].children)
-      
-    } 
-    else {
       parent = findParentInRes(res, man.parentId); // ??
-      console.log("🚀 ~ file: index.js:33 ~ parent", parent)
-      parent.children.push(man);
+      parent.children.push({...man, children: []});
     }
-  }  
 });
 
 
 function findParentInRes(arrayOfParents, parentId) {
+console.log("🚀 ~ file: index.js:33 ~ findParentInRes ~ parentId", parentId)
+
   for (man of arrayOfParents) {
     console.log("🚀 ~ file: index.js:42 ~ findParentInRes ~ man", man)
-    if (man.id === parentId)
+    if (man.id === parentId) {
+      console.log("found result, man=", man);
       return man;
+    }
     else
       findParentInRes(man.children, parentId); 
   }
