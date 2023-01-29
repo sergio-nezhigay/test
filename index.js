@@ -29,7 +29,8 @@ people.forEach(man => {
       
     } 
     else {
-      // parent = findParentInRes(arrayOfParents, man.parentId); // ??
+      parent = findParentInRes(res, man.parentId); // ??
+      console.log("🚀 ~ file: index.js:33 ~ parent", parent)
       parent.children.push(man);
     }
   }  
@@ -37,13 +38,11 @@ people.forEach(man => {
 
 
 function findParentInRes(arrayOfParents, parentId) {
-  for (man in arrayOfParents) {
+  for (man of arrayOfParents) {
+    console.log("🚀 ~ file: index.js:42 ~ findParentInRes ~ man", man)
     if (man.id === parentId)
       return man;
+    else
+      findParentInRes(man.children, parentId); 
   }
-  // check in children
-  
-
-
-
 }
