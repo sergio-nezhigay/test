@@ -1,12 +1,49 @@
-// var swiper = new Swiper(".mySwiper", {
-// 	slidesPerView: "auto",
-// 	spaceBetween: 30,
-// 	pagination: {
-// 	  el: ".swiper-pagination",
-// 	  clickable: true,
-// 	},
-// 	navigation: {
-// 	  nextEl: ".swiper-button-next",
-// 	  prevEl: ".swiper-button-prev",
-// 	},
-//   });
+const people = [
+  {name: "Ivan", id: 1, parentId: null}, 
+  {name: "Sergio", id: 4, parentId: null},  
+
+  {name: "Helen", id: 2, parentId: 1},
+  {name: "Danya", id: 8, parentId: 4},
+
+  {name: "Pavel", id: 3, parentId: 2},
+  {name: "Olya", id: 5, parentId: 2},
+  {name: "Nana", id: 6, parentId: 5},
+  {name: "Ira", id: 7, parentId: 6},
+
+  {name: "Alex", id: 9, parentId: 1},
+];
+
+const res={};
+console.log("start3");
+people.forEach(man => {
+  console.log("🚀 ~ file: index.js:19 ~ man", man)
+  console.log("🚀 ~ file: index.js:30 ~ res", res)
+  if (! man.parentId) {
+    res[man.id] = man;
+    res[man.id].children = [];
+  }  
+  else {
+    if (res[man.parentId]) {
+      res[man.parentId].children.push({...man, children: []}); // ??
+      console.log("🚀 ~ file: index.js:28 ~ res[man.parentId].children", res[man.parentId].children)
+      
+    } 
+    else {
+      // parent = findParentInRes(arrayOfParents, man.parentId); // ??
+      parent.children.push(man);
+    }
+  }  
+});
+
+
+function findParentInRes(arrayOfParents, parentId) {
+  for (man in arrayOfParents) {
+    if (man.id === parentId)
+      return man;
+  }
+  // check in children
+  
+
+
+
+}
