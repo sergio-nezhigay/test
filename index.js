@@ -13,14 +13,13 @@ const people = [
   {name: "Alex", id: 9, parentId: 1},
 ];
 
-const res={};
-console.log("start3");
+const res=[];
+console.log("start4");
 people.forEach(man => {
   console.log("🚀 ~ file: index.js:19 ~ man", man)
   console.log("🚀 ~ file: index.js:30 ~ res", res)
   if (! man.parentId) {
-    res[man.id] = man;
-    res[man.id].children = [];
+    res.push({...man, children: []});
   }  
   else {
     if (res[man.parentId]) {
